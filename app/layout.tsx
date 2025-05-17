@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "EYV - Sistema de Gestión",
   description: "Sistema de gestión de empleados y planillas",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
