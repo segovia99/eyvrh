@@ -1,27 +1,24 @@
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { withAuth } from "next-auth/middleware";
 
-export function middleware(request: NextRequest) {
-  
-  const path = request.nextUrl.pathname
-
-  
-  if (path === "/login" || path === "/registro") {
-    return NextResponse.next()
+export default withAuth(
+  // `withAuth` augments your `Request` with the user's token.
+  function middleware(req) {
+    console.log(req.nextauth.token);
+  },
+  {
+    pages: {
+      signIn: "/login",
+      // error: "/error",
+    },
   }
+  // {
+  //   callbacks: {
+  //     authorized: ({ token }) => token?.role === "admin",
+  //   },
+  // },
+);
 
-  // Simulamos verificación de autenticación (en un caso real, verificaríamos tokens, cookies, etc.)
-  const isAuthenticated = true // Cambiar a true para simular usuario autenticado
-
-  // Si no está autenticado y no está en una ruta pública, redirigir a login
-  if (!isAuthenticated) {
-    return NextResponse.redirect(new URL("/login", request.url))
-  }
-
-  return NextResponse.next()
-}
-
-// rutas que queremos que pasen por el middleware
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
-}
+  // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+  matcher: ["/((?!api|_next/static|_next/image|.*\\.png$).*)"],
+};
