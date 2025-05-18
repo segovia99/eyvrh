@@ -17,8 +17,9 @@ export default function Sidebar() {
   return (
     <div className="w-[337px] flex flex-col bg-white h-full">
       {/* Logo */}
-      <div className="p-8">
-        <h1 className="text-4xl font-light tracking-wider text-teal-800">E Y V</h1>
+      <div className="p-6">
+        {/* <h1 className="text-4xl font-light tracking-wider text-teal-800">E Y V</h1> */}
+        <img src="/logo.webp" alt="logo" className="h-auto w-max  object-contain" />
       </div>
 
       {/* Navigation */}

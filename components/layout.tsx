@@ -22,7 +22,7 @@ export default async function Layout({ children, title }: LayoutProps) {
         </header>
 
         {/* Content */}
-        <div className="flex flex-col items-center gap-8 px-12 w-full max-w-[900px] mx-auto">{children}</div>
+        <div className="flex flex-col items-center gap-8 px-12 w-full max-w-auto mx-auto">{children}</div>
       </div>
     </div>
   )
