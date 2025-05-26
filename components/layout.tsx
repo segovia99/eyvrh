@@ -1,15 +1,11 @@
-import { getServerSession } from "next-auth";
 import Sidebar from "./sidebar"
-import authOptions from "@/app/api/auth/[...nextauth]/options";
-
 interface LayoutProps {
   children: React.ReactNode
   title: string
 }
 
-export default async function Layout({ children, title }: LayoutProps) {
-  // const session = await getServerSession(authOptions);
-  // console.log(session);
+export default  function Layout({ children, title }: LayoutProps) {
+
   return (
     <div className="flex h-screen">
       <Sidebar />
