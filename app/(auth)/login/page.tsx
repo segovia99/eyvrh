@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { User, UserPlus, Lock } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { toast } from "sonner";
 
 
 export default function LoginPage() {
@@ -36,9 +37,20 @@ export default function LoginPage() {
         // callbackUrl: "/",
       });
 
+      
+      // toast.promise(responseNextAuth, {
+      //   loading: 'Iniciando sesión...',
+      //   success: (data) => {
+      //     router.push('/');
+      //     return 'Bienvenido';
+      //   },
+      //   error: 'Credenciales inválidas. Por favor, intente de nuevo.',
+      // });
+
       if (responseNextAuth?.error) {
         setError(responseNextAuth?.error);
         setIsLoading(false);
+        toast.error(responseNextAuth?.error);
       }
 
       if(responseNextAuth?.ok) {  
