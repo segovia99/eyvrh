@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <Layout title="Opciones Rapidas">
       <div className="w-full flex justify-center">
-        <Link href="/reportes/crear" className="w-full max-w-[560px]">
+        <Link href="/reportes" className="w-full max-w-[560px]">
           <QuickOptionButton>Crear Reporte</QuickOptionButton>
         </Link>
       </div>
@@ -17,11 +17,6 @@ export default function Dashboard() {
         </Link>
       </div>
 
-      <div className="w-full flex justify-center">
-        <Link href="/reportes/generar" className="w-full max-w-[560px]">
-          <QuickOptionButton>Generar Reporte</QuickOptionButton>
-        </Link>
-      </div>
     </Layout>
   )
 }
