@@ -49,7 +49,7 @@ const authOptions: NextAuthOptions = {
   },
   jwt: {
     secret: process.env.NEXTAUTH_SECRET,
-    maxAge: 1140,
+    maxAge: 2592000,
   },
   pages: {
     signIn: '/login',
