@@ -383,10 +383,10 @@ export default function ReportesDashboard() {
                   ))}
                 </SelectContent>
               </Select>
-              <Button variant="outline" size="sm">
+              {/* <Button variant="outline" size="sm">
                 <Download className="mr-2 h-4 w-4" />
                 Exportar Dashboard
-              </Button>
+              </Button> */}
             </div>
           </CardHeader>
         </Card>
@@ -750,9 +750,9 @@ export default function ReportesDashboard() {
                       <p className="text-sm text-blue-800">Aportes Patronales</p>
                       <p className="text-lg font-bold text-blue-800">
                         $
-                        {(datosFiltrados.reduce((sum, p) => sum + p.descuetoAfp + p.descuentoIsss, 0) * 0.15).toFixed(
-                          0,
-                        )}
+                        {
+                        (datosFiltrados.reduce((sum, p) => sum + p.descuentoAfp + p.descuentoIsss, 0)).toFixed(0,)
+                        }
                       </p>
                       <p className="text-xs text-blue-600">Estimado (15% adicional)</p>
                     </div>
@@ -762,7 +762,7 @@ export default function ReportesDashboard() {
                       <div className="flex justify-between">
                         <span className="text-sm">AFP (8.25%):</span>
                         <span className="font-medium">
-                          ${datosFiltrados.reduce((sum, p) => sum + p.descuetoAfp, 0).toFixed(0)}
+                          ${datosFiltrados.reduce((sum, p) => sum + p.descuentoAfp, 0).toFixed(0)}
                         </span>
                       </div>
                       <div className="flex justify-between">
