@@ -149,7 +149,7 @@ export default function EditEmpleadoForm({ empleado }: { empleado: Employee }) {
         </div>
         <div className="flex gap-2">
           <Button variant="outline" asChild>
-            <Link href="/empleados/lista">
+            <Link href="/empleados">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Volver
             </Link>
